@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>阿◯ヒ◯シ風ホームページビルダー</title>
+  <meta name="description" content="あの頃のシンプルな個人ホームページをつくろう。プロフィールを入力して、すぐにプレビュー。HTMLで持ち帰れます。架空の人物を使ったパロディ作例。">
+  <link rel="canonical" href="https://zanneninsan.github.io/retro-homepage-builder/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="阿◯ヒ◯シ風ホームページビルダー">
+  <meta property="og:description" content="名前を入れるだけで、あの頃の個人ホームページへ。即プレビューして、HTMLで持ち帰ろう。非公式パロディ。">
+  <meta property="og:url" content="https://zanneninsan.github.io/retro-homepage-builder/">
+  <meta property="og:image" content="https://zanneninsan.github.io/retro-homepage-builder/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="阿◯ヒ◯シ風ホームページビルダー">
+  <meta name="twitter:description" content="名前を入れるだけで、あの頃の個人ホームページへ。即プレビューして、HTMLで持ち帰ろう。非公式パロディ。">
+  <meta name="twitter:image" content="https://zanneninsan.github.io/retro-homepage-builder/social-card.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230c2856'/%3E%3Ctext x='16' y='24' text-anchor='middle' font-size='24' fill='%23e6f5a7'%3E阿%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a href="./" class="brand"><span class="brand-mark">阿</span><span>あの頃の、ホームページ。<small>ABE-STYLE HOMEPAGE BUILDER</small></span></a>
+    <div class="header-actions"><a class="sample-link" href="./sample.html" target="_blank" rel="noopener">作例を見る <span aria-hidden="true">↗</span></a><button class="download primary" type="button"><span aria-hidden="true">↓</span> HTMLをダウンロード</button></div>
+  </header>
+  <main>
+    <div class="page-intro"><div><div class="eyebrow">シンプルこそ、最高。</div><h1>阿◯ヒ◯シ風<br class="mobile-break">ホームページビルダー<span class="version">Ver. 1.0</span></h1></div><p>あの軽さ。あの余白。あの青いリンク。<br>あなたのホームページも、あの頃へ。</p></div>
+    <div class="workspace">
+      <section class="editor" aria-labelledby="editor-heading">
+        <div class="editor-heading"><h2 id="editor-heading">ホームページの設定</h2><button class="text-button" id="reset" type="button">初期化</button></div>
+        <div class="tabs" role="tablist" aria-label="編集する項目">
+          <button type="button" role="tab" aria-selected="true" aria-controls="panel-profile" id="tab-profile" tabindex="0" data-tab="profile"><span>01</span> 基本情報</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="panel-news" id="tab-news" tabindex="-1" data-tab="news"><span>02</span> お知らせ</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="panel-design" id="tab-design" tabindex="-1" data-tab="design"><span>03</span> デザイン</button>
+        </div>
+        <form id="settings" autocomplete="off">
+          <div role="tabpanel" id="panel-profile" aria-labelledby="tab-profile">
+            <label class="field">お名前<input name="name" maxlength="50" value="阿◯ ヒ◯シ" required><span class="hint">ページのタイトルに使われます。</span></label>
+            <label class="field">英語表記<input name="english" maxlength="80" value="A. H."></label>
+            <div class="field"><span>プロフィール画像</span><div class="photo-picker"><div class="photo-thumb" id="photo-thumb"></div><div><label class="upload-button" for="photo">画像を変更</label><input id="photo" type="file" accept="image/jpeg,image/png,image/webp" class="visually-hidden"><p class="hint">JPG / PNG / WebP・2MBまで</p><button type="button" class="text-button" id="remove-photo">画像を非表示</button></div></div></div>
+            <label class="field">プロフィール<textarea name="profile" rows="5" maxlength="2000">阿◯ ヒ◯シ（パロディ上の人物）
+年齢：永遠の39歳
+出身地：架空の町・青空町
+肩書き：自称・なんでも屋の俳優</textarea><span class="hint">改行もそのまま反映されます。</span></label>
+            <label class="field">ひとこと<textarea name="intro" rows="2" maxlength="500">いつも応援ありがとうございます。</textarea></label>
+            <label class="field">リンク先の名前<input name="linkLabel" maxlength="60" value=""></label>
+            <label class="field">リンク先のURL<input name="linkUrl" type="url" maxlength="500" value=""></label>
+          </div>
+          <div role="tabpanel" id="panel-news" aria-labelledby="tab-news" hidden>
+            <p class="panel-note">最新情報を、飾らずまっすぐに。<br>3つの見出しと本文を編集できます。</p>
+            <div id="news-fields"></div>
+            <label class="field">更新日<input name="updated" type="date" value="2026-10-03"></label>
+          </div>
+          <div role="tabpanel" id="panel-design" aria-labelledby="tab-design" hidden>
+            <fieldset class="color-field"><legend>背景の色</legend><div class="swatches"><label><input type="radio" name="background" value="#ffffee" checked><span style="--swatch:#ffffee">クリーム</span></label><label><input type="radio" name="background" value="#ffffff"><span style="--swatch:#ffffff">ホワイト</span></label><label><input type="radio" name="background" value="#effaff"><span style="--swatch:#effaff">水色</span></label><label><input type="radio" name="background" value="#f0faee"><span style="--swatch:#f0faee">若草</span></label></div></fieldset>
+            <label class="field">背景に繰り返す文字<input name="watermark" maxlength="50" value="A.H. PARODY"></label>
+            <label class="check-field"><input type="checkbox" name="showWatermark" checked> 背景の文字を表示する</label>
+            <label class="field">メニューの色<input type="color" name="navColor" value="#edfafa"></label>
+            <div class="design-note"><strong>あの頃のお約束</strong><p>明朝体、青いリンク、控えめな罫線。<br>大切なものだけを残したデザインです。</p></div>
+          </div>
+        </form>
+        <div class="editor-bottom"><span aria-hidden="true">✓</span> 入力するとプレビューに反映されます</div>
+      </section>
+      <section class="preview-section" aria-labelledby="preview-heading">
+        <div class="preview-toolbar"><h2 id="preview-heading"><span class="live-dot" aria-hidden="true"></span>プレビュー</h2><div class="view-switch" role="group" aria-label="プレビューの幅"><button type="button" class="selected" aria-pressed="true" data-view="desktop">PC</button><button type="button" aria-pressed="false" data-view="mobile">スマホ</button></div><button type="button" class="open-preview" id="open-preview" title="編集内容を別タブで見る">別タブで見る <span aria-hidden="true">↗</span></button></div>
+        <div class="browser-stage"><div class="browser-window" id="browser-window"><div class="browser-chrome"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span class="address"><span aria-hidden="true">▤</span> my-homepage / index.html</span><span class="html-label">HTML</span></div><iframe id="preview" title="作成中のホームページ" sandbox="allow-popups allow-popups-to-escape-sandbox"></iframe></div></div>
+        <div class="preview-bottom"><span><strong>懐かしさはそのまま。</strong> スマホにも対応。</span><span id="file-size">HTML</span></div>
+        <div class="tip"><span class="tip-label">つくったら</span><p>HTMLをダウンロードして、自分のホームページに。<br>このページでの編集内容は、作例ページには反映されません。</p><button class="download secondary" type="button">HTMLを保存 <span aria-hidden="true">↓</span></button></div>
+      </section>
+    </div>
+    <footer><span>あの頃のインターネットに、敬意を込めて。</span><span>伏字と架空設定を使った非公式パロディ作例です。</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="reset-dialog"><h2>編集内容を初期化しますか？</h2><p>入力した文章や画像を、最初の作例に戻します。</p><div class="dialog-actions"><button id="cancel-reset" type="button">戻る</button><button id="confirm-reset" class="primary" type="button">初期化する</button></div></dialog>
+</body>
+</html>
